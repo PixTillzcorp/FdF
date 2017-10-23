@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calc.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: heinfalt <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/10/23 15:14:34 by heinfalt          #+#    #+#             */
+/*   Updated: 2017/10/23 15:19:39 by heinfalt         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/fdf.h"
 
 static void	ft_calc(t_fdf *win, t_points *point)
@@ -38,9 +50,11 @@ static int	ft_paint(int p_1, int p_2, int max_z)
 {
 	if (((p_1 + p_2) * 500) > 500 * max_z)
 		return ((int)(0xFFFFFF));
-	else if (((p_1 + p_2) * 500) >= 50 * max_z && ((p_1 + p_2) * 500) < 200 * max_z)
+	else if (((p_1 + p_2) * 500) >= 50 * max_z && ((p_1 + p_2)\
+	* 500) < 200 * max_z)
 		return ((int)(0x25FF50));
-	else if (((p_1 + p_2) * 500) >= 10 * max_z && ((p_1 + p_2) * 500) < 50 * max_z)
+	else if (((p_1 + p_2) * 500) >= 10 * max_z && ((p_1 + p_2)\
+	* 500) < 50 * max_z)
 		return ((int)(0xFFFF00));
 	else if (((p_1 + p_2) * 500) < 10 * max_z)
 		return ((int)(0x0041FF));

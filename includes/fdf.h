@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fdf.h                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: heinfalt <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/10/23 15:20:57 by heinfalt          #+#    #+#             */
+/*   Updated: 2017/10/23 15:23:20 by heinfalt         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FDF_H
 # define FDF_H
 
@@ -56,28 +68,25 @@ typedef struct		s_bresenham
 
 typedef	struct		s_fdf
 {
-	char			*file; //path
-	void			*mlx; //pointeur init
-	void			*win; //pointeur sur fenetre
-	char			*data; //pointeur sur data adrr
-	void			*img; //pointeur sur l'image
-	int				pro; //projection ISO || PARA
-	int				size; //variable pour data addr
-	int				endian; //variable pour data addr
+	char			*file;
+	void			*mlx;
+	void			*win;
+	char			*data;
+	void			*img;
+	int				pro;
+	int				size;
+	int				endian;
 	int				pad;
 	int				pad_h;
-	int				move_lr; //valeur decalage gauche droite
-	int				move_ud; //valeur decalage haut bas
-	t_points		***map; //coordonnees points
-	int				map_h; //hauteur map
-	int				map_w; //largeur map
-	int				max_z; //hauteur max
-	int				color; //couleur
-	int				legend; //legend ON || OFF
+	int				move_lr;
+	int				move_ud;
+	t_points		***map;
+	int				map_h;
+	int				map_w;
+	int				max_z;
+	int				color;
+	int				legend;
 }					t_fdf;
-
-//libft
-
 
 void				ft_putnbr(int n);
 char				*ft_strjoin(char const *s1, char const *s2);
@@ -107,8 +116,6 @@ void				ft_memdel(void **ap);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lst_push_back(t_list **lst, t_list *elem);
 int					ft_lstlen(t_list *list);
-
-//fdf
 
 void				ft_fdf(t_fdf *win);
 

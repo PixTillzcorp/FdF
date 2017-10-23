@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_map.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: heinfalt <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/10/23 15:15:32 by heinfalt          #+#    #+#             */
+/*   Updated: 2017/10/23 15:15:34 by heinfalt         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/fdf.h"
 
 static t_points	*ft_newpoint(char *data, int y, int x, t_fdf *win)
@@ -77,7 +89,7 @@ static t_list	*ft_create_list(int fd, t_list *map)
 	line = ft_strdup("");
 	while ((gnl = get_next_line(fd, &line)) != 0)
 	{
-		if (gnl == -1 || i >= 2000)
+		if (gnl == -1 || i >= 2000 || (char)(*line) == 0)
 			ft_error("Invalid read or map too big", 0);
 		ft_lst_push_back(&map, ft_lstnew(line, ft_strlen(line)));
 		free(line);
@@ -85,6 +97,8 @@ static t_list	*ft_create_list(int fd, t_list *map)
 	}
 	if (line)
 		free(line);
+	if (i == 0)
+		ft_error("Empty map", 0);
 	return (map);
 }
 

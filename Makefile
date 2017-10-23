@@ -73,7 +73,7 @@ $(MLX_LIB):
 
 $(NAME) : $(SRCO) fdf.h
 	@ echo "$(PINK)$(FONT_NOIR).o successfully created\t\t\t[$(GREEN)\xe2\x9c\x94$(PINK)]$(NORMAL)"
-	@ $(CC) -o $(NAME) $(SRCO) $(MLX_LNK) #$(LIB_PATH)libft.a
+	@ $(CC) -o $(NAME) $(SRCO) $(MLX_LNK)
 	@ echo "$(PINK)$(FONT_NOIR)Compilation of $(NAME)\t\t\t[$(GREEN)\xe2\x9c\x94$(PINK)]$(NORMAL)"
 	
 clean: cleared
